@@ -1,0 +1,123 @@
+<http://test.org/flow/instance/push_string/0> <http://www.meandre.org/ontology/instance_resource> <http://test.org/component/push-string> .
+<http://test.org/flow/instance/push_string/0> <http://www.meandre.org/ontology/instance_name> "Push String 0"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/push_string/0> <http://purl.org/dc/elements/1.1/description> "Push hello world"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/push_string/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/instance_configuration> .
+<http://test.org/flow/test-hello-world> <http://www.meandre.org/ontology/tag> "hello_world"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/test-hello-world> <http://purl.org/dc/elements/1.1/creator> "Xavier Llor&agrave;"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/test-hello-world> <http://purl.org/dc/elements/1.1/date> "2008-04-09T12:29:58"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://test.org/flow/test-hello-world> <http://www.meandre.org/ontology/components_instances> <http://test.org/flow/test-hello-world/components/set> .
+<http://test.org/flow/test-hello-world> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/flow_component> .
+<http://test.org/flow/test-hello-world> <http://purl.org/dc/elements/1.1/rights> "University of Illinois/NCSA open source license"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/test-hello-world> <http://www.meandre.org/ontology/name> "Hello World!!!"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/test-hello-world> <http://purl.org/dc/elements/1.1/description> "A simple hello world test"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/test-hello-world> <http://www.meandre.org/ontology/tag> "demo"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/test-hello-world> <http://www.meandre.org/ontology/connectors> <http://test.org/flow/test-hello-world/connector/set> .
+<http://test.org/flow/connector/1> <http://www.meandre.org/ontology/connector_instance_source> <http://test.org/flow/instance/push_string/1> .
+<http://test.org/flow/connector/1> <http://www.meandre.org/ontology/connector_instance_data_port_source> <http://test.org/component/push-string/output/string> .
+<http://test.org/flow/connector/1> <http://www.meandre.org/ontology/connector_instance_target> <http://test.org/flow/instance/concatenate_string/2> .
+<http://test.org/flow/connector/1> <http://www.meandre.org/ontology/connector_instance_data_port_target> <http://test.org/component/concatenate-strings/input/string_two> .
+<http://test.org/flow/connector/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/data_connector_configuration> .
+<http://test.org/flow/instance/concatenate_string/2> <http://www.meandre.org/ontology/instance_resource> <http://test.org/component/concatenate-strings> .
+<http://test.org/flow/instance/concatenate_string/2> <http://www.meandre.org/ontology/instance_name> "Concatenate String 0"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/concatenate_string/2> <http://purl.org/dc/elements/1.1/description> "Concatenates two strings"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/concatenate_string/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/instance_configuration> .
+<http://test.org/component/concatenate-strings/output/concatenated_string> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/data_port> .
+<http://test.org/component/concatenate-strings/output/concatenated_string> <http://purl.org/dc/elements/1.1/identifier> "http://test.org/component/concatenate-strings/output/concatenated_string"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings/output/concatenated_string> <http://www.meandre.org/ontology/name> "concatenated_string"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings/output/concatenated_string> <http://purl.org/dc/elements/1.1/description> "The concatenated string"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/push_string/1> <http://www.meandre.org/ontology/instance_resource> <http://test.org/component/push-string> .
+<http://test.org/flow/instance/push_string/1> <http://www.meandre.org/ontology/instance_name> "Push String 1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/push_string/1> <http://purl.org/dc/elements/1.1/description> "Push hello world"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/push_string/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/instance_configuration> .
+<http://test.org/flow/connector/2> <http://www.meandre.org/ontology/connector_instance_source> <http://test.org/flow/instance/concatenate_string/2> .
+<http://test.org/flow/connector/2> <http://www.meandre.org/ontology/connector_instance_data_port_source> <http://test.org/component/concatenate-strings/output/concatenated_string> .
+<http://test.org/flow/connector/2> <http://www.meandre.org/ontology/connector_instance_target> <http://test.org/flow/instance/print-object/3> .
+<http://test.org/flow/connector/2> <http://www.meandre.org/ontology/connector_instance_data_port_target> <http://test.org/component/print-object/input/object> .
+<http://test.org/flow/connector/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/data_connector_configuration> .
+<http://test.org/component/concatenate-strings/input/string_two> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/data_port> .
+<http://test.org/component/concatenate-strings/input/string_two> <http://purl.org/dc/elements/1.1/identifier> "http://test.org/component/concatenate-strings/input/string_two"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings/input/string_two> <http://www.meandre.org/ontology/name> "string_two"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings/input/string_two> <http://purl.org/dc/elements/1.1/description> "The second string to concatenate"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/runnable> "java"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/tag> "print"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://purl.org/dc/elements/1.1/date> "2008-04-09T12:29:58"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://test.org/component/print-object> <http://purl.org/dc/elements/1.1/rights> "University of Illinois/NCSA open source license"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/resource_location> <http://test.org/component/org.meandre.demo.components.PrintObjectComponent> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/input_data_port> <http://test.org/component/print-object/input/object> .
+<http://test.org/component/print-object> <http://purl.org/dc/elements/1.1/description> "Prints the object in the input to the standard output"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/tag> "object"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://purl.org/dc/elements/1.1/format> "java/class"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://purl.org/dc/elements/1.1/creator> "Xavier Llor&agrave;"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/executable_component> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/tag> "demo"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/firing_policy> "all"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/execution_context> <http://test.org/component/> .
+<http://test.org/component/print-object> <http://www.meandre.org/ontology/name> "Print Object"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings/input/string_one> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/data_port> .
+<http://test.org/component/concatenate-strings/input/string_one> <http://purl.org/dc/elements/1.1/identifier> "http://test.org/component/concatenate-strings/input/string_one"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings/input/string_one> <http://www.meandre.org/ontology/name> "string_one"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings/input/string_one> <http://purl.org/dc/elements/1.1/description> "The first string to concatenate"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://purl.org/dc/elements/1.1/format> "java/class"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://purl.org/dc/elements/1.1/date> "2008-04-09T12:29:58"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/tag> "demo"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/input_data_port> <http://test.org/component/concatenate-strings/input/string_two> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/execution_context> <http://test.org/component/> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/input_data_port> <http://test.org/component/concatenate-strings/input/string_one> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/resource_location> <http://test.org/component/org.meandre.demo.components.ConcatenateStringsComponent> .
+<http://test.org/component/concatenate-strings> <http://purl.org/dc/elements/1.1/creator> "Xavier Llor&agrave;"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/tag> "concatenate"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/name> "Concatenate Strings"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/runnable> "java"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://purl.org/dc/elements/1.1/rights> "University of Illinois/NCSA open source license"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/executable_component> .
+<http://test.org/component/concatenate-strings> <http://purl.org/dc/elements/1.1/description> "Concatenates the to input string to the output"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/firing_policy> "all"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/tag> "string"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/concatenate-strings> <http://www.meandre.org/ontology/output_data_port> <http://test.org/component/concatenate-strings/output/concatenated_string> .
+<http://test.org/flow/test-hello-world/connector/set> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/connector_set> .
+<http://test.org/flow/test-hello-world/connector/set> <http://www.meandre.org/ontology/data_connector> <http://test.org/flow/connector/1> .
+<http://test.org/flow/test-hello-world/connector/set> <http://www.meandre.org/ontology/data_connector> <http://test.org/flow/connector/0> .
+<http://test.org/flow/test-hello-world/connector/set> <http://www.meandre.org/ontology/data_connector> <http://test.org/flow/connector/2> .
+<http://test.org/flow/connector/0> <http://www.meandre.org/ontology/connector_instance_source> <http://test.org/flow/instance/push_string/0> .
+<http://test.org/flow/connector/0> <http://www.meandre.org/ontology/connector_instance_data_port_source> <http://test.org/component/push-string/output/string> .
+<http://test.org/flow/connector/0> <http://www.meandre.org/ontology/connector_instance_target> <http://test.org/flow/instance/concatenate_string/2> .
+<http://test.org/flow/connector/0> <http://www.meandre.org/ontology/connector_instance_data_port_target> <http://test.org/component/concatenate-strings/input/string_one> .
+<http://test.org/flow/connector/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/data_connector_configuration> .
+<http://test.org/flow/instance/print-object/3> <http://www.meandre.org/ontology/instance_resource> <http://test.org/component/print-object> .
+<http://test.org/flow/instance/print-object/3> <http://www.meandre.org/ontology/instance_name> "Print Object 0"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/print-object/3> <http://purl.org/dc/elements/1.1/description> "Prints the concatenated object"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/instance/print-object/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/instance_configuration> .
+<http://test.org/component/push-string> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/executable_component> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/tag> "demo"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/name> "Push String"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/tag> "string"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://purl.org/dc/elements/1.1/description> "Pushes the string stored into the properties to the output"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/firing_policy> "all"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://purl.org/dc/elements/1.1/date> "2008-04-09T12:29:58"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://test.org/component/push-string> <http://purl.org/dc/elements/1.1/rights> "University of Illinois/NCSA open source license"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/output_data_port> <http://test.org/component/push-string/output/string> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/resource_location> <http://test.org/component/org.meandre.demo.components.PushStringComponent> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/runnable> "java"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://purl.org/dc/elements/1.1/creator> "Xavier Llor&agrave;"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/property_set> <http://test.org/component/push-string/property/message> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/tag> "hello_world"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string> <http://www.meandre.org/ontology/execution_context> <http://test.org/component/> .
+<http://test.org/component/push-string> <http://purl.org/dc/elements/1.1/format> "java/class"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string/property/message> <http://purl.org/dc/elements/1.1/description> "The string message to be pushed trough the output port"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string/property/message> <http://www.meandre.org/ontology/value> "Hello World!!! Happy Meandring!!!"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string/property/message> <http://www.meandre.org/ontology/key> "message"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string/property/message> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/property> .
+<http://test.org/component/print-object/input/object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/data_port> .
+<http://test.org/component/print-object/input/object> <http://purl.org/dc/elements/1.1/identifier> "http://test.org/component/print-object/input/object"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object/input/object> <http://www.meandre.org/ontology/name> "object"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/print-object/input/object> <http://purl.org/dc/elements/1.1/description> "The object to print"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/flow/test-hello-world/components/set> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/instance_set> .
+<http://test.org/flow/test-hello-world/components/set> <http://www.meandre.org/ontology/executable_component_instance> <http://test.org/flow/instance/print-object/3> .
+<http://test.org/flow/test-hello-world/components/set> <http://www.meandre.org/ontology/executable_component_instance> <http://test.org/flow/instance/push_string/1> .
+<http://test.org/flow/test-hello-world/components/set> <http://www.meandre.org/ontology/executable_component_instance> <http://test.org/flow/instance/concatenate_string/2> .
+<http://test.org/flow/test-hello-world/components/set> <http://www.meandre.org/ontology/executable_component_instance> <http://test.org/flow/instance/push_string/0> .
+<http://test.org/component/push-string/output/string> <http://purl.org/dc/elements/1.1/description> "The string being pushed"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string/output/string> <http://www.meandre.org/ontology/name> "string"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string/output/string> <http://purl.org/dc/elements/1.1/identifier> "http://test.org/component/push-string/output/string"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://test.org/component/push-string/output/string> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.meandre.org/ontology/data_port> .
+

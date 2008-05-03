@@ -1,0 +1,191 @@
+@prefix meandre:  <http://www.meandre.org/ontology/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix :        <http://www.meandre.org/ontology/> .
+
+<http://test.org/flow/connector/0>
+      rdf:type meandre:data_connector_configuration ;
+      meandre:connector_instance_data_port_source
+              <http://test.org/component/push-string/output/string> ;
+      meandre:connector_instance_data_port_target
+              <http://test.org/component/concatenate-strings/input/string_one> ;
+      meandre:connector_instance_source
+              <http://test.org/flow/instance/push_string/0> ;
+      meandre:connector_instance_target
+              <http://test.org/flow/instance/concatenate_string/2> .
+
+<http://test.org/flow/test-hello-world/connector/set>
+      rdf:type meandre:connector_set ;
+      meandre:data_connector
+              <http://test.org/flow/connector/2> , <http://test.org/flow/connector/0> , <http://test.org/flow/connector/1> .
+
+<http://test.org/flow/instance/concatenate_string/2>
+      rdf:type meandre:instance_configuration ;
+      dc:description "Concatenates two strings"^^xsd:string ;
+      meandre:instance_name
+              "Concatenate String 0"^^xsd:string ;
+      meandre:instance_resource
+              <http://test.org/component/concatenate-strings> .
+
+<http://test.org/flow/instance/push_string/0>
+      rdf:type meandre:instance_configuration ;
+      dc:description "Push hello world"^^xsd:string ;
+      meandre:instance_name
+              "Push String 0"^^xsd:string ;
+      meandre:instance_resource
+              <http://test.org/component/push-string> .
+
+<http://test.org/flow/test-hello-world/components/set>
+      rdf:type meandre:instance_set ;
+      meandre:executable_component_instance
+              <http://test.org/flow/instance/concatenate_string/2> , <http://test.org/flow/instance/print-object/3> , <http://test.org/flow/instance/push_string/0> , <http://test.org/flow/instance/push_string/1> .
+
+<http://test.org/flow/instance/push_string/1>
+      rdf:type meandre:instance_configuration ;
+      dc:description "Push hello world"^^xsd:string ;
+      meandre:instance_name
+              "Push String 1"^^xsd:string ;
+      meandre:instance_resource
+              <http://test.org/component/push-string> .
+
+<http://test.org/component/concatenate-strings>
+      rdf:type meandre:executable_component ;
+      dc:creator "Xavier Llor&agrave;"^^xsd:string ;
+      dc:date "2008-04-09T12:29:17"^^xsd:date ;
+      dc:description "Concatenates the to input string to the output"^^xsd:string ;
+      dc:format "java/class"^^xsd:string ;
+      dc:rights "University of Illinois/NCSA open source license"^^xsd:string ;
+      meandre:execution_context
+              <http://test.org/component/> ;
+      meandre:firing_policy
+              "all"^^xsd:string ;
+      meandre:input_data_port
+              <http://test.org/component/concatenate-strings/input/string_two> , <http://test.org/component/concatenate-strings/input/string_one> ;
+      meandre:name "Concatenate Strings"^^xsd:string ;
+      meandre:output_data_port
+              <http://test.org/component/concatenate-strings/output/concatenated_string> ;
+      meandre:resource_location
+              <http://test.org/component/org.meandre.demo.components.ConcatenateStringsComponent> ;
+      meandre:runnable "java"^^xsd:string ;
+      meandre:tag "string"^^xsd:string , "concatenate"^^xsd:string , "demo"^^xsd:string .
+
+<http://test.org/flow/connector/2>
+      rdf:type meandre:data_connector_configuration ;
+      meandre:connector_instance_data_port_source
+              <http://test.org/component/concatenate-strings/output/concatenated_string> ;
+      meandre:connector_instance_data_port_target
+              <http://test.org/component/print-object/input/object> ;
+      meandre:connector_instance_source
+              <http://test.org/flow/instance/concatenate_string/2> ;
+      meandre:connector_instance_target
+              <http://test.org/flow/instance/print-object/3> .
+
+<http://test.org/flow/test-hello-world>
+      rdf:type meandre:flow_component ;
+      dc:creator "Xavier Llor&agrave;"^^xsd:string ;
+      dc:date "2008-04-09T12:29:17"^^xsd:date ;
+      dc:description "A simple hello world test"^^xsd:string ;
+      dc:rights "University of Illinois/NCSA open source license"^^xsd:string ;
+      meandre:components_instances
+              <http://test.org/flow/test-hello-world/components/set> ;
+      meandre:connectors <http://test.org/flow/test-hello-world/connector/set> ;
+      meandre:name "Hello World!!!"^^xsd:string ;
+      meandre:tag "hello_world"^^xsd:string , "demo"^^xsd:string .
+
+<http://test.org/component/push-string/output/string>
+      rdf:type meandre:data_port ;
+      dc:description "The string being pushed"^^xsd:string ;
+      dc:identifier "http://test.org/component/push-string/output/string"^^xsd:string ;
+      meandre:name "string"^^xsd:string .
+
+<http://test.org/component/print-object/input/object>
+      rdf:type meandre:data_port ;
+      dc:description "The object to print"^^xsd:string ;
+      dc:identifier "http://test.org/component/print-object/input/object"^^xsd:string ;
+      meandre:name "object"^^xsd:string .
+
+<http://test.org/component/push-string/property/message>
+      rdf:type meandre:property ;
+      dc:description "The string message to be pushed trough the output port"^^xsd:string ;
+      meandre:key "message"^^xsd:string ;
+      meandre:value "Hello World!!! Happy Meandring!!!"^^xsd:string .
+
+<http://test.org/component/concatenate-strings/output/concatenated_string>
+      rdf:type meandre:data_port ;
+      dc:description "The concatenated string"^^xsd:string ;
+      dc:identifier "http://test.org/component/concatenate-strings/output/concatenated_string"^^xsd:string ;
+      meandre:name "concatenated_string"^^xsd:string .
+
+<http://test.org/flow/instance/print-object/3>
+      rdf:type meandre:instance_configuration ;
+      dc:description "Prints the concatenated object"^^xsd:string ;
+      meandre:instance_name
+              "Print Object 0"^^xsd:string ;
+      meandre:instance_resource
+              <http://test.org/component/print-object> .
+
+<http://test.org/flow/connector/1>
+      rdf:type meandre:data_connector_configuration ;
+      meandre:connector_instance_data_port_source
+              <http://test.org/component/push-string/output/string> ;
+      meandre:connector_instance_data_port_target
+              <http://test.org/component/concatenate-strings/input/string_two> ;
+      meandre:connector_instance_source
+              <http://test.org/flow/instance/push_string/1> ;
+      meandre:connector_instance_target
+              <http://test.org/flow/instance/concatenate_string/2> .
+
+<http://test.org/component/print-object>
+      rdf:type meandre:executable_component ;
+      dc:creator "Xavier Llor&agrave;"^^xsd:string ;
+      dc:date "2008-04-09T12:29:17"^^xsd:date ;
+      dc:description "Prints the object in the input to the standard output"^^xsd:string ;
+      dc:format "java/class"^^xsd:string ;
+      dc:rights "University of Illinois/NCSA open source license"^^xsd:string ;
+      meandre:execution_context
+              <http://test.org/component/> ;
+      meandre:firing_policy
+              "all"^^xsd:string ;
+      meandre:input_data_port
+              <http://test.org/component/print-object/input/object> ;
+      meandre:name "Print Object"^^xsd:string ;
+      meandre:resource_location
+              <http://test.org/component/org.meandre.demo.components.PrintObjectComponent> ;
+      meandre:runnable "java"^^xsd:string ;
+      meandre:tag "print"^^xsd:string , "object"^^xsd:string , "demo"^^xsd:string .
+
+<http://test.org/component/push-string>
+      rdf:type meandre:executable_component ;
+      dc:creator "Xavier Llor&agrave;"^^xsd:string ;
+      dc:date "2008-04-09T12:29:17"^^xsd:date ;
+      dc:description "Pushes the string stored into the properties to the output"^^xsd:string ;
+      dc:format "java/class"^^xsd:string ;
+      dc:rights "University of Illinois/NCSA open source license"^^xsd:string ;
+      meandre:execution_context
+              <http://test.org/component/> ;
+      meandre:firing_policy
+              "all"^^xsd:string ;
+      meandre:name "Push String"^^xsd:string ;
+      meandre:output_data_port
+              <http://test.org/component/push-string/output/string> ;
+      meandre:property_set
+              <http://test.org/component/push-string/property/message> ;
+      meandre:resource_location
+              <http://test.org/component/org.meandre.demo.components.PushStringComponent> ;
+      meandre:runnable "java"^^xsd:string ;
+      meandre:tag "string"^^xsd:string , "hello_world"^^xsd:string , "demo"^^xsd:string .
+
+<http://test.org/component/concatenate-strings/input/string_two>
+      rdf:type meandre:data_port ;
+      dc:description "The second string to concatenate"^^xsd:string ;
+      dc:identifier "http://test.org/component/concatenate-strings/input/string_two"^^xsd:string ;
+      meandre:name "string_two"^^xsd:string .
+
+<http://test.org/component/concatenate-strings/input/string_one>
+      rdf:type meandre:data_port ;
+      dc:description "The first string to concatenate"^^xsd:string ;
+      dc:identifier "http://test.org/component/concatenate-strings/input/string_one"^^xsd:string ;
+      meandre:name "string_one"^^xsd:string .
+
